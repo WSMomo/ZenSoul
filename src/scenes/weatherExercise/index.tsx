@@ -37,7 +37,7 @@ export default function WeatherExercise() {
     }
 
     fetchWeather();
-  }, [lat, lon, weather]);
+  }, [lat, lon]);
 
   return (
     <motion.div
