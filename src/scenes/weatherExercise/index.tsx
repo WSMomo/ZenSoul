@@ -1,22 +1,10 @@
 import { useEffect, useState } from "react";
-import { OPEN_WEATHER_KEY, weatherIcons } from "../../shared/global";
+import {
+  OPEN_WEATHER_KEY,
+  WeatherType,
+  weatherIcons,
+} from "../../shared/global";
 import { motion } from "framer-motion";
-type WeatherType =
-  | "clouds"
-  | "clear"
-  | "mist"
-  | "snow"
-  | "rain"
-  | "drizzle"
-  | "thunderstorm"
-  | "haze"
-  | "smoke"
-  | "sand"
-  | "dust"
-  | "fog"
-  | "squall"
-  | "tornado"
-  | "volcanicAsh";
 
 export default function WeatherExercise() {
   const [lat, setLat] = useState(0);
@@ -50,10 +38,6 @@ export default function WeatherExercise() {
 
     fetchWeather();
   }, [lat, lon, weather]);
-
-  // function getWeatherIcon(weather: string) {
-  //   console.log(typeof weather);
-  // }
 
   return (
     <motion.div

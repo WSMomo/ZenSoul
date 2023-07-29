@@ -81,3 +81,19 @@ export const weatherIcons = {
       "Volcanic ash fills the sky. Embrace the cycle of destruction and creation.",
   },
 };
+export type WeatherType =
+  | "clouds"
+  | "clear"
+  | "mist"
+  | "snow"
+  | "rain"
+  | "drizzle"
+  | "thunderstorm"
+  | "haze"
+  | "smoke"
+  | "sand"
+  | "dust"
+  | "fog"
+  | "squall"
+  | "tornado"
+  | "volcanicAsh";
