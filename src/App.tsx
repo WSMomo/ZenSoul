@@ -4,7 +4,7 @@ import WeatherExercise from "./scenes/weatherExercise";
 
 function App() {
   return (
-    <div>
+    <div className="bg-gradient-to-b from-cyan-500 to-blue-500">
       <Navbar />
       <Hero />
       <WeatherExercise />

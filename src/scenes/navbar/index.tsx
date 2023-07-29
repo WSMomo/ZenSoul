@@ -10,7 +10,7 @@ export default function Navbar() {
   }
 
   return (
-    <div className="md:p-5 p-10 bg-red-50 flex justify-between items-center">
+    <div className="md:p-3 p-5 bg-red-50 flex justify-between items-center sticky top-0">
       {/* LEFT / LOGO */}
       <div className="w-28">
         <img src={Logo} alt="logo" className="h-full w-full" />

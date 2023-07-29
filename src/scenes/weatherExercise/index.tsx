@@ -54,11 +54,21 @@ export default function WeatherExercise() {
         visible: { opacity: 1, y: 0 },
       }}
     >
-      <div>
-        <p className="text-2xl">"{weatherIcons[weather]?.sentence}"</p>
-      </div>
-      <div>
-        <img src={weatherIcons[weather]?.img} alt={weather} />
+      <div
+        className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none rounded-lg`}
+      >
+        <div className="flex flex-col justify-center items-center ">
+          <p className="text-2xl w-4/5 md:w-3/6 text-center">
+            "{weatherIcons[weather]?.sentence}"
+          </p>
+        </div>
+        <div className="md:w-64 md:h-64">
+          <img
+            className="w-full h-full"
+            src={weatherIcons[weather]?.img}
+            alt={weather}
+          />
+        </div>
       </div>
     </motion.div>
   );
