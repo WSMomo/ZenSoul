@@ -3,7 +3,7 @@ import Logo from "../../assets/logo.png";
 
 export default function Hero() {
   return (
-    <div className="bg-blue-500 min-h-screen flex flex-col items-center">
+    <div className="bg-blue-500 min-h-full py-20 flex flex-col items-center">
       {/* LOGO */}
       <motion.div
         className="w-5/6 md:w-96"
