@@ -1,3 +1,4 @@
+import Exercises from "./scenes/exercises";
 import Hero from "./scenes/hero";
 import Navbar from "./scenes/navbar";
 import WeatherExercise from "./scenes/weatherExercise";
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <WeatherExercise />
+      <Exercises />
     </div>
   );
 }

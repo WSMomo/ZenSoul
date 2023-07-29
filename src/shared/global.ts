@@ -1,13 +1,23 @@
 // WEATHER ICONS
-import CloudsIcon from "../assets/clouds.png";
-import ClearIcon from "../assets/clear.png";
-import RainIcon from "../assets/rain.png";
-import SnowIcon from "../assets/snow.png";
-import ThunderstormIcon from "../assets/thunderstorm.png";
-import DrizzleIcon from "../assets/drizzle.png";
-import AtmosphereIcon from "../assets/atmosphere.png";
+import CloudsIcon from "../assets/weather/clouds.png";
+import ClearIcon from "../assets/weather/clear.png";
+import RainIcon from "../assets/weather/rain.png";
+import SnowIcon from "../assets/weather/snow.png";
+import ThunderstormIcon from "../assets/weather/thunderstorm.png";
+import DrizzleIcon from "../assets/weather/drizzle.png";
+import AtmosphereIcon from "../assets/weather/atmosphere.png";
 
+// EXERCISES ICONS
+import Grass from "../assets/exercises/grass.jpg";
+import Lake from "../assets/exercises/lake.jpg";
+import Relax from "../assets/exercises/relax.jpg";
+import Sea from "../assets/exercises/sea.jpg";
+import Woods from "../assets/exercises/woods.jpg";
+
+// API KEY
 export const OPEN_WEATHER_KEY = "6a328251fa3f88b66e7627cfcec453ab";
+
+// WEATHER SENTENCES AND ICONS
 export const weatherIcons = {
   clouds: {
     img: CloudsIcon,
@@ -113,3 +123,34 @@ export type WeatherType =
   | "squall"
   | "tornado"
   | "volcanicAsh";
+
+// EXERCISES SENTENCES AND ICONS
+export const exercisesIcons = {
+  grass: {
+    img: Grass,
+    sentence:
+      "Feel the softness of the grass, finding presence in the earth's embrace.",
+    bgColor: "bg-green-200",
+  },
+  lake: {
+    img: Lake,
+    sentence: "Imagine thoughts as ripples on a serene lake, gently calming.",
+    bgColor: "bg-blue-200",
+  },
+  relax: {
+    img: Relax,
+    sentence: "Let go of tension, embrace tranquility within your mind.",
+    bgColor: "bg-yellow-200",
+  },
+  sea: {
+    img: Sea,
+    sentence: "Allow the sea's rhythm to guide you to inner peace.",
+    bgColor: "bg-teal-200",
+  },
+  woods: {
+    img: Woods,
+    sentence:
+      "Walk through enchanting woods, nature's harmony restores your spirit.",
+    bgColor: "bg-emerald-300",
+  },
+};
