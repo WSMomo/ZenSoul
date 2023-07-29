@@ -21,88 +21,92 @@ export const OPEN_WEATHER_KEY = "6a328251fa3f88b66e7627cfcec453ab";
 export const weatherIcons = {
   clouds: {
     img: CloudsIcon,
-    sentence: "Today is a cloudy day. Embrace the calmness within the clouds.",
+    sentence:
+      "Today is a cloudy day. Embrace the calmness within the clouds. Take a moment to meditate and find serenity within yourself.",
     bgColor: "bg-blue-300",
   },
   clear: {
     img: ClearIcon,
     sentence:
-      "It's a clear day outside. Let your mind find clarity in your meditation.",
+      "It's a clear day outside. Let your mind find clarity in your meditation. Take some time to meditate and bring clarity to your thoughts.",
     bgColor: "bg-yellow-300",
   },
   mist: {
     img: AtmosphereIcon,
     sentence:
-      "The air is filled with mist. Embrace the soothing ambiance and find tranquility within yourself.",
+      "The air is filled with mist. Embrace the soothing ambiance and find tranquility within yourself. Try meditating amidst the mist and feel its calming effect.",
     bgColor: "bg-gray-300",
   },
   snow: {
     img: SnowIcon,
     sentence:
-      "Snowflakes are falling gently. Meditate and feel the stillness within.",
+      "Snowflakes are falling gently. Meditate and feel the stillness within. Take a moment to meditate and appreciate the beauty of the falling snow.",
     bgColor: "bg-white",
   },
   rain: {
     img: RainIcon,
     sentence:
-      "Rain is nourishing the earth. Reflect and find renewal in your meditation.",
+      "Rain is nourishing the earth. Reflect and find renewal in your meditation. Take some time to meditate and embrace the refreshing energy of the rain.",
     bgColor: "bg-blue-500",
   },
   drizzle: {
     img: DrizzleIcon,
     sentence:
-      "A light drizzle is refreshing. Meditate and cleanse your thoughts.",
+      "A light drizzle is refreshing. Meditate and cleanse your thoughts. Take a moment to meditate and let the drizzle wash away any worries.",
     bgColor: "bg-teal-200",
   },
   thunderstorm: {
     img: ThunderstormIcon,
     sentence:
-      "Thunder roars in the sky. Embrace the power of your inner strength.",
+      "Thunder roars in the sky. Embrace the power of your inner strength. Take some time to meditate and tap into your inner strength.",
     bgColor: "bg-indigo-600",
   },
   haze: {
     img: AtmosphereIcon,
-    sentence: "The atmosphere is hazy. Embrace the mysterious aura around you.",
+    sentence:
+      "The atmosphere is hazy. Embrace the mysterious aura around you. Try meditating amidst the haze and see what insights come to you.",
     bgColor: "bg-purple-300",
   },
   smoke: {
     img: AtmosphereIcon,
     sentence:
-      "Smoke fills the air. Find clarity and direction amidst the smoky haze.",
+      "Smoke fills the air. Find clarity and direction amidst the smoky haze. Take a moment to meditate and let the smoke dissipate any mental fog.",
     bgColor: "bg-gray-400",
   },
   sand: {
     img: AtmosphereIcon,
     sentence:
-      "The air is filled with sand particles. Embrace the earthy connection.",
+      "The air is filled with sand particles. Embrace the earthy connection. Try meditating and feel grounded like the sand beneath your feet.",
     bgColor: "bg-yellow-400",
   },
   dust: {
     img: AtmosphereIcon,
-    sentence: "Dust is in the air. Reflect on the transient nature of life.",
+    sentence:
+      "Dust is in the air. Reflect on the transient nature of life. Take some time to meditate and contemplate the impermanence of things.",
     bgColor: "bg-yellow-600",
   },
   fog: {
     img: AtmosphereIcon,
     sentence:
-      "A thick fog blankets the surroundings. Find peace in the moment.",
+      "A thick fog blankets the surroundings. Find peace in the moment. Take a moment to meditate amidst the fog and let your mind settle.",
     bgColor: "bg-gray-500",
   },
   squall: {
     img: AtmosphereIcon,
     sentence:
-      "Squalls are moving through. Stay resilient and steady like the wind.",
+      "Squalls are moving through. Stay resilient and steady like the wind. Take some time to meditate and harness the strength of the wind.",
     bgColor: "bg-blue-600",
   },
   tornado: {
     img: AtmosphereIcon,
-    sentence: "A tornado approaches. Find inner strength in times of chaos.",
+    sentence:
+      "A tornado approaches. Find inner strength in times of chaos. Take a moment to meditate and find calmness amidst the storm.",
     bgColor: "bg-red-600",
   },
   volcanicAsh: {
     img: AtmosphereIcon,
     sentence:
-      "Volcanic ash fills the sky. Embrace the cycle of destruction and creation.",
+      "Volcanic ash fills the sky. Embrace the cycle of destruction and creation. Take some time to meditate and reflect on the transformative power of change.",
     bgColor: "bg-gray-800",
   },
 };
