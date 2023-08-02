@@ -141,7 +141,8 @@ type Exercise = {
   sentence: string;
   bgColor: string;
   song: string;
-  bgImage?: string;
+  bgImageSm: string;
+  bgImageMd: string;
 };
 
 // EXERCISES SENTENCES AND ICONS
@@ -153,7 +154,8 @@ export const exercisesIcons: Record<string, Exercise> = {
       "Feel the softness of the grass, finding presence in the earth's embrace.",
     bgColor: "bg-green-200",
     song: GrassSong,
-    bgImage: "bg-lake-background-sm",
+    bgImageSm: "bg-grass-background-sm",
+    bgImageMd: "md:bg-grass-background-md",
   },
   lake: {
     title: "lake",
@@ -161,6 +163,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     sentence: "Imagine thoughts as ripples on a serene lake, gently calming.",
     bgColor: "bg-blue-200",
     song: LakeSong,
+    bgImageSm: "bg-lake-background-sm",
+    bgImageMd: "md:bg-lake-background-md",
   },
   relax: {
     title: "relax",
@@ -168,6 +172,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     sentence: "Let go of tension, embrace tranquility within your mind.",
     bgColor: "bg-yellow-200",
     song: RelaxSong,
+    bgImageSm: "bg-relax-background-sm",
+    bgImageMd: "md:bg-relax-background-md",
   },
   sea: {
     title: "sea",
@@ -175,6 +181,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     sentence: "Allow the sea's rhythm to guide you to inner peace.",
     bgColor: "bg-teal-200",
     song: SeaSong,
+    bgImageSm: "bg-sea-background-sm",
+    bgImageMd: "md:bg-sea-background-md",
   },
   woods: {
     title: "woods",
@@ -183,5 +191,7 @@ export const exercisesIcons: Record<string, Exercise> = {
       "Walk through enchanting woods, nature's harmony restores your spirit.",
     bgColor: "bg-emerald-300",
     song: WoodsSong,
+    bgImageSm: "bg-woods-background-sm",
+    bgImageMd: "md:bg-woods-background-md",
   },
 };

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from "react";
-import Water from "../assets/songs/grass.mp3";
 import { Clock } from "../components/Clock";
 import { ActionButton } from "../components/ActionButton";
 import { useNavigate } from "react-router-dom";
@@ -13,10 +12,12 @@ export default function Workout() {
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-  const location = useLocation();
-  const { title } = location.state;
-  console.log(title);
 
+  const location = useLocation();
+
+  const { type } = location.state;
+  const { bgImageMd, bgImageSm, song } = type.type;
+  console.log(bgImageMd);
   function handlePlay() {
     if (!isRunning && timer > 0) {
       // start the timer
@@ -24,7 +25,7 @@ export default function Workout() {
         setTimer((timer) => timer - 1);
       }, 1000);
       // start the song
-      const audio = new Audio(Water);
+      const audio = new Audio(song);
 
       audio.addEventListener("ended", () => {
         audio.currentTime = 0;
@@ -67,9 +68,15 @@ export default function Workout() {
     }
   }, [timer]);
 
+  function handleReset() {
+    navigate("../");
+    audioRef.current?.pause();
+    clearInterval(intervalRef.current);
+  }
+
   return (
     <div
-      className={`h-screen flex flex-col items-center py-10  bg-woods-background-sm md:bg-woods-background-md bg-no-repeat bg-cover`}
+      className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd} `}
     >
       <Clock minutes={minutes} seconds={seconds} />
       {/* PLAY */}
@@ -82,9 +89,7 @@ export default function Workout() {
         <ActionButton handleClick={handleDecreaseTimer}>-5</ActionButton>
         <ActionButton handleClick={handleIncreaseTimer}>+5</ActionButton>
       </div>
-      <ActionButton handleClick={() => navigate("../")}>
-        Return at Home
-      </ActionButton>
+      <ActionButton handleClick={handleReset}>Return at Home</ActionButton>
     </div>
   );
 }

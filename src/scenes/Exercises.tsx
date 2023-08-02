@@ -13,8 +13,9 @@ export default function Exercises() {
     <div className="flex flex-col gap-10">
       {exercisesTypes.map((type, index) => (
         <Exercise
+          key={index}
           side={index}
-          title={exercisesIcons[type].title}
+          type={exercisesIcons[type]}
           bgColor={exercisesIcons[type].bgColor}
           sentence={exercisesIcons[type].sentence}
           image={exercisesIcons[type].img}

@@ -5,17 +5,23 @@ type Props = {
   sentence: string;
   image: string;
   side: number;
-  title: string;
+  type: object;
 };
 
-export function Exercise({ side, bgColor, sentence, image, title }: Props) {
+export function Exercise({ side, bgColor, sentence, image, type }: Props) {
   const navigate = useNavigate();
   return (
     <>
       {/* IF EVEN = LEFT, ELSE = RIGHT */}
       {side % 2 === 0 ? (
         <motion.div
-          onClick={() => navigate("./workout", { state: { title: { title } } })}
+          onClick={() =>
+            navigate("./workout", {
+              state: {
+                type: { type },
+              },
+            })
+          }
           className={`w-5/6 md:w-3/5 h-40 md:h-48 rounded-r-full self-start ${bgColor} flex items-center min-w-min p-2 cursor-pointer bg-opacity-60 hover:bg-opacity-90 shadow-md`}
           initial="hidden"
           whileInView="visible"
@@ -42,6 +48,13 @@ export function Exercise({ side, bgColor, sentence, image, title }: Props) {
         </motion.div>
       ) : (
         <motion.div
+          onClick={() =>
+            navigate("./workout", {
+              state: {
+                type: { type },
+              },
+            })
+          }
           className={`w-5/6 md:w-3/5 h-40 md:h-48 rounded-l-full self-end ${bgColor} flex items-center min-w-min p-2 bg-opacity-60 hover:bg-opacity-90 cursor-pointer shadow-md`}
           initial="hidden"
           whileInView="visible"
