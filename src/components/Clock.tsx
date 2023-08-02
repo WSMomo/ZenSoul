@@ -6,7 +6,7 @@ export function Clock({ seconds, minutes }: Props) {
   return (
     <>
       {/* CLOCK */}
-      <div className="h-2/5 bg-green-50  bg-opacity-50 rounded-full aspect-square flex relative border-4 border-blue-300 shadow-2xl">
+      <div className="h-2/5 bg-green-50  bg-opacity-50 rounded-full aspect-square flex relative border-4 border-blue-300 shadow-2xl mb-12">
         {/* MINUTES */}
         <div className="w-1/2 h-full rounded-l-full flex justify-center items-center">
           <p className="font-semibold text-6xl">

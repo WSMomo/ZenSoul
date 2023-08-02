@@ -82,7 +82,7 @@ export default function Workout() {
 
   return (
     <div
-      className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd} bg `}
+      className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd}`}
     >
       <Clock minutes={minutes} seconds={seconds} />
       {/* PLAY */}
