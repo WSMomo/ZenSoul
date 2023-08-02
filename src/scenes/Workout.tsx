@@ -3,6 +3,8 @@ import Water from "../assets/songs/grass.mp3";
 import { Clock } from "../components/Clock";
 import { ActionButton } from "../components/ActionButton";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
+
 export default function Workout() {
   const navigate = useNavigate();
   const [timer, setTimer] = useState(300);
@@ -11,6 +13,9 @@ export default function Workout() {
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
+  const location = useLocation();
+  const { title } = location.state;
+  console.log(title);
 
   function handlePlay() {
     if (!isRunning && timer > 0) {
@@ -64,7 +69,7 @@ export default function Workout() {
 
   return (
     <div
-      className={`h-screen flex flex-col items-center py-10 bg-lake-background md:bg-lake-background-md bg-no-repeat bg-cover`}
+      className={`h-screen flex flex-col items-center py-10  bg-woods-background-sm md:bg-woods-background-md bg-no-repeat bg-cover`}
     >
       <Clock minutes={minutes} seconds={seconds} />
       {/* PLAY */}

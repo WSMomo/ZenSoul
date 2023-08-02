@@ -4,10 +4,26 @@ export default {
   theme: {
     extend: {
       backgroundImage: {
-        "lake-background": "url('./src/assets/exercises/lake.jpg')",
+        "lake-background-sm":
+          "url('./src/assets/background/lake-background-sm.jpg')",
         "lake-background-md":
           "url('./src/assets/background/lake-background-md.jpg')",
-        "footer-texture": "url('/img/footer-texture.png')",
+        "grass-background-sm":
+          "url('./src/assets/background/grass-background-sm.jpg')",
+        "grass-background-md":
+          "url('./src/assets/background/grass-background-md.jpg')",
+        "relax-background-sm":
+          "url('./src/assets/background/relax-background-sm.jpg')",
+        "relax-background-md":
+          "url('./src/assets/background/relax-background-md.jpg')",
+        "sea-background-sm":
+          "url('./src/assets/background/sea-background-sm.jpg')",
+        "sea-background-md":
+          "url('./src/assets/background/sea-background-md.jpg')",
+        "woods-background-sm":
+          "url('./src/assets/background/woods-background-sm.jpg')",
+        "woods-background-md":
+          "url('./src/assets/background/woods-background-md.jpg')",
       },
     },
   },

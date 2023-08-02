@@ -135,34 +135,49 @@ export type WeatherType =
   | "tornado"
   | "volcanicAsh";
 
+type Exercise = {
+  title: string;
+  img: string;
+  sentence: string;
+  bgColor: string;
+  song: string;
+  bgImage?: string;
+};
+
 // EXERCISES SENTENCES AND ICONS
-export const exercisesIcons = {
+export const exercisesIcons: Record<string, Exercise> = {
   grass: {
+    title: "grass",
     img: Grass,
     sentence:
       "Feel the softness of the grass, finding presence in the earth's embrace.",
     bgColor: "bg-green-200",
     song: GrassSong,
+    bgImage: "bg-lake-background-sm",
   },
   lake: {
+    title: "lake",
     img: Lake,
     sentence: "Imagine thoughts as ripples on a serene lake, gently calming.",
     bgColor: "bg-blue-200",
     song: LakeSong,
   },
   relax: {
+    title: "relax",
     img: Relax,
     sentence: "Let go of tension, embrace tranquility within your mind.",
     bgColor: "bg-yellow-200",
     song: RelaxSong,
   },
   sea: {
+    title: "sea",
     img: Sea,
     sentence: "Allow the sea's rhythm to guide you to inner peace.",
     bgColor: "bg-teal-200",
     song: SeaSong,
   },
   woods: {
+    title: "woods",
     img: Woods,
     sentence:
       "Walk through enchanting woods, nature's harmony restores your spirit.",

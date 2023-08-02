@@ -14,6 +14,7 @@ export default function Exercises() {
       {exercisesTypes.map((type, index) => (
         <Exercise
           side={index}
+          title={exercisesIcons[type].title}
           bgColor={exercisesIcons[type].bgColor}
           sentence={exercisesIcons[type].sentence}
           image={exercisesIcons[type].img}
