@@ -1,21 +1,36 @@
-import Exercises from "./scenes/exercises";
-import Footer from "./scenes/footer";
-import Hero from "./scenes/hero";
-import Navbar from "./scenes/navbar";
-import WeatherExercise from "./scenes/weatherExercise";
+import Home from "./components/Home";
 import Workout from "./scenes/workout";
-
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 function App() {
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path="/" element={<Root />}>
+        <Route index element={<Home />} />
+        <Route path="/workout" element={<Workout />} />
+      </Route>
+    )
+  );
   return (
     <div className="bg-gradient-to-b from-cyan-500 to-blue-500">
-      <Navbar />
-      <Hero />
-      <WeatherExercise />
-      <Exercises />
-      <Workout />
-      <Footer />
+      <RouterProvider router={router} />
     </div>
   );
 }
 
 export default App;
+
+function Root() {
+  return (
+    <>
+      <div>
+        <Outlet />
+      </div>
+    </>
+  );
+}

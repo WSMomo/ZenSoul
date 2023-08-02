@@ -1,6 +1,5 @@
 import { exercisesIcons } from "../../shared/global";
 import { Exercise } from "./Exercise";
-
 const exercisesTypes: Array<keyof typeof exercisesIcons> = [
   "grass",
   "lake",
@@ -20,7 +19,6 @@ export default function Exercises() {
           image={exercisesIcons[type].img}
         />
       ))}
-      {/* Aggiungi gli altri esercizi qui utilizzando gli indici corrispondenti */}
     </div>
   );
 }

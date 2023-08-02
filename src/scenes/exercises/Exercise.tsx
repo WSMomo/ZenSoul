@@ -5,6 +5,7 @@ type Props = {
   sentence: string;
   image: string;
   side: number;
+  onClick: () => void;
 };
 
 export function Exercise({ side, bgColor, sentence, image }: Props) {

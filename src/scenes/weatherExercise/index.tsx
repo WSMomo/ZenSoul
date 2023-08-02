@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
   OPEN_WEATHER_KEY,
@@ -38,6 +39,7 @@ export default function WeatherExercise() {
 
     fetchWeather();
   }, [lat, lon]);
+  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -55,6 +57,7 @@ export default function WeatherExercise() {
       }}
     >
       <div
+        onClick={() => navigate("/workout")}
         className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none rounded-lg hover:bg-opacity-60 cursor-pointer`}
       >
         <div className="flex flex-col justify-center items-center ">
