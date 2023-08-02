@@ -76,20 +76,26 @@ export default function Workout() {
 
   return (
     <div
-      className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd} `}
+      className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd} bg `}
     >
       <Clock minutes={minutes} seconds={seconds} />
       {/* PLAY */}
-      <ActionButton handleClick={handlePlay}>
+      <ActionButton handleClick={handlePlay} color="bg-blue-300">
         {isRunning && timer > 0 && "Stop"}
         {!isRunning && timer > 0 && "Start"}
         {isRunning && timer === 0 && "Restart"}
       </ActionButton>
       <div>
-        <ActionButton handleClick={handleDecreaseTimer}>-5</ActionButton>
-        <ActionButton handleClick={handleIncreaseTimer}>+5</ActionButton>
+        <ActionButton handleClick={handleDecreaseTimer} color="bg-red-300">
+          -5
+        </ActionButton>
+        <ActionButton handleClick={handleIncreaseTimer} color="bg-green-300">
+          +5
+        </ActionButton>
       </div>
-      <ActionButton handleClick={handleReset}>Return at Home</ActionButton>
+      <ActionButton handleClick={handleReset} color="bg-slate-300">
+        Return at Home
+      </ActionButton>
     </div>
   );
 }
