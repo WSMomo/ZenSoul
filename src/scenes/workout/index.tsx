@@ -64,8 +64,20 @@ export default function Workout() {
         {isRunning && timer === 0 && "Restart"}
       </button>
 
-      <button onClick={handleDecreaseTimer}>-5</button>
-      <button onClick={handleIncreaseTimer}>+5</button>
+      <div>
+        <button
+          onClick={handleDecreaseTimer}
+          className="bg-red-300 m-10 p-2 rounded-md"
+        >
+          -5
+        </button>
+        <button
+          onClick={handleIncreaseTimer}
+          className="bg-red-300 m-10 p-2 rounded-md"
+        >
+          +5
+        </button>
+      </div>
     </div>
   );
 }
