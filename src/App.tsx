@@ -1,4 +1,4 @@
-import Home from "./components/Home";
+import Home from "./scenes/Home";
 import Workout from "./scenes/Workout";
 import {
   createBrowserRouter,
