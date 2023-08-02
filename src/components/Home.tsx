@@ -1,8 +1,8 @@
-import Exercises from "../scenes/exercises";
-import Footer from "../scenes/footer";
-import Hero from "../scenes/hero";
-import Navbar from "../scenes/navbar";
-import WeatherExercise from "../scenes/weatherExercise";
+import Exercises from "../scenes/Exercises";
+import Footer from "../scenes/Footer";
+import Hero from "../scenes/Hero";
+import Navbar from "../scenes/Navbar";
+import WeatherExercise from "../scenes/WeatherExercise";
 
 export default function Home() {
   return (

@@ -1,5 +1,5 @@
 import Home from "./components/Home";
-import Workout from "./scenes/workout/Workout";
+import Workout from "./scenes/Workout";
 import {
   createBrowserRouter,
   createRoutesFromElements,

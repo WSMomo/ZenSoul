@@ -1,5 +1,5 @@
-import { exercisesIcons } from "../../shared/global";
-import { Exercise } from "./Exercise";
+import { exercisesIcons } from "../shared/global";
+import { Exercise } from "../components/Exercise";
 const exercisesTypes: Array<keyof typeof exercisesIcons> = [
   "grass",
   "lake",

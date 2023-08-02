@@ -1,10 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import {
-  OPEN_WEATHER_KEY,
-  WeatherType,
-  weatherIcons,
-} from "../../shared/global";
+import { OPEN_WEATHER_KEY, WeatherType, weatherIcons } from "../shared/global";
 import { motion } from "framer-motion";
 
 export default function WeatherExercise() {

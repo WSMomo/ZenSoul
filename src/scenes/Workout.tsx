@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from "react";
-import Water from "../../assets/songs/test.mp3";
-import { Clock } from "./Clock";
-import { ActionButton } from "../../components/ActionButton";
+import Water from "../assets/songs/grass.mp3";
+import { Clock } from "../components/Clock";
+import { ActionButton } from "../components/ActionButton";
 import { useNavigate } from "react-router-dom";
 export default function Workout() {
   const navigate = useNavigate();
-  const [timer, setTimer] = useState(30000);
+  const [timer, setTimer] = useState(300);
   const minutes = Math.floor(timer / 60);
   const seconds = timer - minutes * 60;
   const [isRunning, setIsRunning] = useState(false);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../assets/logo.png";
+import Logo from "../assets/logo.png";
 import { Bars2Icon } from "@heroicons/react/20/solid";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 export default function Navbar() {
