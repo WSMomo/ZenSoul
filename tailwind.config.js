@@ -10,7 +10,8 @@ export default {
           "url('./src/assets/background/lake-background-md.jpg')",
         "grass-background-sm":
           "url('./src/assets/background/grass-background-sm.jpg')",
-        "grass-background-md": "url('/background/grass-background-md.jpg')",
+        "grass-background-md":
+          "url('./assets/background/grass-background-md.jpg')",
         "relax-background-sm":
           "url('./src/assets/background/relax-background-sm.jpg')",
         "relax-background-md":
