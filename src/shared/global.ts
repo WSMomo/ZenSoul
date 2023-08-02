@@ -25,6 +25,7 @@ import WoodsSong from "../assets/songs/woods.mp3";
 export const OPEN_WEATHER_KEY = "6a328251fa3f88b66e7627cfcec453ab";
 
 // WEATHER SENTENCES AND ICONS
+
 export const weatherIcons = {
   clouds: {
     img: CloudsIcon,
@@ -135,7 +136,7 @@ export type WeatherType =
   | "tornado"
   | "volcanicAsh";
 
-type Exercise = {
+export type Exercise = {
   title: string;
   img: string;
   sentence: string;

@@ -1,3 +1,4 @@
+import ErrorPage from "./scenes/ErrorPage";
 import Home from "./scenes/Home";
 import Workout from "./scenes/Workout";
 import {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<Root />}>
         <Route index element={<Home />} />
         <Route path="/workout" element={<Workout />} />
+        <Route path="*" element={<ErrorPage />} />
       </Route>
     )
   );

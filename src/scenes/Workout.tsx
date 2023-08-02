@@ -12,12 +12,10 @@ export default function Workout() {
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
-
   const location = useLocation();
 
   const { type } = location.state;
-  const { bgImageMd, bgImageSm, song } = type.type;
-  console.log(bgImageMd);
+  const { bgImageMd, bgImageSm, song } = type;
   function handlePlay() {
     if (!isRunning && timer > 0) {
       // start the timer
@@ -73,6 +71,14 @@ export default function Workout() {
     audioRef.current?.pause();
     clearInterval(intervalRef.current);
   }
+
+  useEffect(() => {
+    window.addEventListener("popstate", () => {
+      navigate("../");
+      audioRef.current?.pause();
+      clearInterval(intervalRef.current);
+    });
+  }, [navigate]);
 
   return (
     <div

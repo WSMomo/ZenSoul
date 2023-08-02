@@ -1,12 +1,55 @@
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { OPEN_WEATHER_KEY, WeatherType, weatherIcons } from "../shared/global";
+import {
+  OPEN_WEATHER_KEY,
+  WeatherType,
+  // exercisesIcons,
+  weatherIcons,
+} from "../shared/global";
 import { motion } from "framer-motion";
 
 export default function WeatherExercise() {
+  // const navigate = useNavigate();
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [weather, setWeather] = useState<WeatherType>("clear");
+  // const [type, setType] = useState<Exercise>(exercisesIcons.clear);
+  // function handleExercise() {
+  //   switch (weather) {
+  //     case "clouds":
+  //     case "haze":
+  //     case "squall":
+  //       setType(exercisesIcons.grass);
+  //       break;
+  //     case "clear":
+  //     case "drizzle":
+  //       setType(exercisesIcons.lake);
+  //       break;
+  //     case "mist":
+  //     case "rain":
+  //     case "thunderstorm":
+  //       setType(exercisesIcons.sea);
+  //       break;
+  //     case "snow":
+  //     case "tornado":
+  //     case "volcanicAsh":
+  //       setType(exercisesIcons.woods);
+  //       break;
+  //     case "smoke":
+  //     case "sand":
+  //     case "dust":
+  //     case "fog":
+  //       setType(exercisesIcons.relax);
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // }
+
+  // useEffect(() => {
+
+  // }, [navigate, type]);
+
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -30,12 +73,10 @@ export default function WeatherExercise() {
       const res = await fetch(key);
       const data = await res.json();
       setWeather(data.weather[0].main.toLowerCase());
-      console.log(data);
     }
 
     fetchWeather();
   }, [lat, lon]);
-  const navigate = useNavigate();
 
   return (
     <motion.div
@@ -53,7 +94,9 @@ export default function WeatherExercise() {
       }}
     >
       <div
-        onClick={() => navigate("/workout")}
+        // onClick={() => {
+        //   navigate("./workout", { state: { type } });
+        // }}
         className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none rounded-lg hover:bg-opacity-60 cursor-pointer`}
       >
         <div className="flex flex-col justify-center items-center ">
