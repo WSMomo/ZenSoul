@@ -12,8 +12,8 @@ function App() {
       <Hero />
       <WeatherExercise />
       <Exercises />
-      <Footer />
       <Workout />
+      <Footer />
     </div>
   );
 }

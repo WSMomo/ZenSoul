@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import Water from "../../assets/songs/water.mp3";
 import { Clock } from "./Clock";
+import { ActionButton } from "../../components/ActionButton";
 
 export default function Workout() {
   const [timer, setTimer] = useState(300);
@@ -55,28 +56,19 @@ export default function Workout() {
   }, [timer]);
 
   return (
-    <div className="h-screen flex flex-col items-center py-10">
+    <div
+      className={`h-screen flex flex-col items-center py-10 bg-lake-background md:bg-lake-background-md bg-no-repeat bg-cover`}
+    >
       <Clock minutes={minutes} seconds={seconds} />
       {/* PLAY */}
-      <button className="bg-red-300 mt-10 p-2 rounded-md" onClick={handlePlay}>
+      <ActionButton handleClick={handlePlay}>
         {isRunning && timer > 0 && "Stop"}
         {!isRunning && timer > 0 && "Start"}
         {isRunning && timer === 0 && "Restart"}
-      </button>
-
+      </ActionButton>
       <div>
-        <button
-          onClick={handleDecreaseTimer}
-          className="bg-red-300 m-10 p-2 rounded-md"
-        >
-          -5
-        </button>
-        <button
-          onClick={handleIncreaseTimer}
-          className="bg-red-300 m-10 p-2 rounded-md"
-        >
-          +5
-        </button>
+        <ActionButton handleClick={handleDecreaseTimer}>-5</ActionButton>
+        <ActionButton handleClick={handleIncreaseTimer}>+5</ActionButton>
       </div>
     </div>
   );
