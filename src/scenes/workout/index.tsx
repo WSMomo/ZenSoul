@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import Water from "../../assets/songs/water.mp3";
+import Water from "../../assets/songs/test.mp3";
 import { Clock } from "./Clock";
 import { ActionButton } from "../../components/ActionButton";
 
 export default function Workout() {
-  const [timer, setTimer] = useState(300);
+  const [timer, setTimer] = useState(30000);
   const minutes = Math.floor(timer / 60);
   const seconds = timer - minutes * 60;
   const [isRunning, setIsRunning] = useState(false);
@@ -19,6 +19,12 @@ export default function Workout() {
       }, 1000);
       // start the song
       const audio = new Audio(Water);
+
+      audio.addEventListener("ended", () => {
+        audio.currentTime = 0;
+        audio.play();
+      });
+
       audio.play();
       audioRef.current = audio;
     } else if (isRunning) {

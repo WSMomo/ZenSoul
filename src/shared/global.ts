@@ -14,6 +14,13 @@ import Relax from "../assets/exercises/relax.jpg";
 import Sea from "../assets/exercises/sea.jpg";
 import Woods from "../assets/exercises/woods.jpg";
 
+// SONGS
+import GrassSong from "../assets/songs/grass.mp3";
+import LakeSong from "../assets/songs/lake.mp3";
+import RelaxSong from "../assets/songs/relax.mp3";
+import SeaSong from "../assets/songs/sea.mp3";
+import WoodsSong from "../assets/songs/woods.mp3";
+
 // API KEY
 export const OPEN_WEATHER_KEY = "6a328251fa3f88b66e7627cfcec453ab";
 
@@ -135,26 +142,31 @@ export const exercisesIcons = {
     sentence:
       "Feel the softness of the grass, finding presence in the earth's embrace.",
     bgColor: "bg-green-200",
+    song: GrassSong,
   },
   lake: {
     img: Lake,
     sentence: "Imagine thoughts as ripples on a serene lake, gently calming.",
     bgColor: "bg-blue-200",
+    song: LakeSong,
   },
   relax: {
     img: Relax,
     sentence: "Let go of tension, embrace tranquility within your mind.",
     bgColor: "bg-yellow-200",
+    song: RelaxSong,
   },
   sea: {
     img: Sea,
     sentence: "Allow the sea's rhythm to guide you to inner peace.",
     bgColor: "bg-teal-200",
+    song: SeaSong,
   },
   woods: {
     img: Woods,
     sentence:
       "Walk through enchanting woods, nature's harmony restores your spirit.",
     bgColor: "bg-emerald-300",
+    song: WoodsSong,
   },
 };

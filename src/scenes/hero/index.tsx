@@ -20,7 +20,7 @@ export default function Hero() {
       </motion.div>
       {/* MESSAGGIO DI BENVENUTO */}
       <div>
-        <h1 className="text-4xl text-white">Bentornato!</h1>
+        <h1 className="text-4xl text-white">Welcome!</h1>
       </div>
     </div>
   );
