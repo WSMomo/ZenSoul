@@ -7,6 +7,10 @@ import ThunderstormIcon from "../assets/weather/thunderstorm.png";
 import DrizzleIcon from "../assets/weather/drizzle.png";
 import AtmosphereIcon from "../assets/weather/atmosphere.png";
 
+// BACKGROUND IMAGES
+import GrassBackgroundSm from "../assets/background/grass-background-sm.jpg";
+import GrassBackgroundMd from "../assets/background/grass-background-md.jpg";
+
 // EXERCISES ICONS
 import Grass from "../assets/exercises/grass.jpg";
 import Lake from "../assets/exercises/lake.jpg";
@@ -159,8 +163,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     song: GrassSong,
     bgImageSm: "bg-grass-background-sm",
     bgImageMd: "md:bg-grass-background-md",
-    pathBgImageSm: "src/assets/background/grass-background-sm.jpg",
-    pathBgImageMd: "../assets/background/grass-background-md.jpg",
+    pathBgImageSm: GrassBackgroundSm,
+    pathBgImageMd: GrassBackgroundMd,
   },
   lake: {
     title: "lake",

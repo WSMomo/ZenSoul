@@ -32,7 +32,7 @@ export default function Workout() {
       console.error("Errore durante il caricamento dell'immagine di sfondo.");
       setImageIsLoaded(false);
     };
-  }, [bgImageSm]);
+  }, []);
 
   function handlePlay() {
     if (!isRunning && timer > 0) {
@@ -127,7 +127,7 @@ export default function Workout() {
           </ActionButton>
         </div>
       ) : (
-        <div>dwadw</div>
+        <div>Loading</div>
       )}
     </>
   );
