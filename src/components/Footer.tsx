@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="border-t-2 text-center mt-44 py-10 w-full">
+    <footer className="border-t-2 text-center mt-44 py-10 w-full font-sans">
       <div>
         Developed by{" "}
         <a
