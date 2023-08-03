@@ -34,7 +34,7 @@ import SeaSong from "../assets/songs/sea.mp3";
 import WoodsSong from "../assets/songs/woods.mp3";
 
 // API KEY
-export const OPEN_WEATHER_KEY = "6a328251fa3f88b66e7627cfcec453ab";
+export const OPEN_WEATHER_KEY = import.meta.env.VITE_OPEN_WEATHER_KEY;
 
 // WEATHER SENTENCES AND ICONS
 

@@ -96,9 +96,6 @@ export default function Workout() {
     clearInterval(intervalRef.current);
   }
 
-  useEffect(() => {
-    localStorage.setItem("workoutType", JSON.stringify(type));
-  }, [type]);
   return (
     <>
       {imageIsLoaded ? (

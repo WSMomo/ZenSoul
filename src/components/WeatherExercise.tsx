@@ -1,59 +1,42 @@
-// import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 import {
-  Exercise,
   OPEN_WEATHER_KEY,
   WeatherType,
   exercisesIcons,
-  // exercisesIcons,
   weatherIcons,
 } from "../shared/global";
-import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
 
-export default function WeatherExercise() {
-  // const navigate = useNavigate();
+type ExerciseType = keyof typeof exercisesIcons;
+
+function mapWeatherToExercise(weather: WeatherType): ExerciseType {
+  const mapping: Record<WeatherType, ExerciseType> = {
+    clouds: "grass",
+    haze: "grass",
+    squall: "grass",
+    clear: "lake",
+    drizzle: "lake",
+    mist: "sea",
+    rain: "sea",
+    thunderstorm: "sea",
+    snow: "woods",
+    tornado: "woods",
+    volcanicAsh: "woods",
+    smoke: "relax",
+    sand: "relax",
+    dust: "relax",
+    fog: "relax",
+  };
+
+  return mapping[weather] || "relax";
+}
+
+function WeatherExercise() {
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [weather, setWeather] = useState<WeatherType>("clear");
-  const [type, setType] = useState<Exercise>(exercisesIcons.clear);
   const navigate = useNavigate();
-
-  useEffect(() => {
-    function handleExercise() {
-      switch (weather) {
-        case "clouds":
-        case "haze":
-        case "squall":
-          setType(exercisesIcons.grass);
-          break;
-        case "clear":
-        case "drizzle":
-          setType(exercisesIcons.lake);
-          break;
-        case "mist":
-        case "rain":
-        case "thunderstorm":
-          setType(exercisesIcons.sea);
-          break;
-        case "snow":
-        case "tornado":
-        case "volcanicAsh":
-          setType(exercisesIcons.woods);
-          break;
-        case "smoke":
-        case "sand":
-        case "dust":
-        case "fog":
-          setType(exercisesIcons.relax);
-          break;
-        default:
-          setType(exercisesIcons.relax);
-          return;
-      }
-    }
-    handleExercise();
-  }, [weather]);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -72,20 +55,25 @@ export default function WeatherExercise() {
       console.error("Il browser non supporta la geolocalizzazione.");
     }
   }, []);
+
   useEffect(() => {
-    const key: string = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_KEY}`;
     async function fetchWeather() {
-      const res = await fetch(key);
-      const data = await res.json();
-      setWeather(data.weather[0].main.toLowerCase());
+      const key = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_KEY}`;
+      try {
+        const res = await fetch(key);
+        const data = await res.json();
+        setWeather(data.weather[0].main.toLowerCase());
+      } catch (error) {
+        console.error("Errore nel recupero dei dati meteorologici:", error);
+      }
     }
 
     fetchWeather();
   }, [lat, lon]);
 
   function handleNavigate() {
-    console.log(type);
-    navigate("./workout", { state: { type } });
+    const weatherType = mapWeatherToExercise(weather);
+    navigate("./workout", { state: { type: exercisesIcons[weatherType] } });
   }
 
   return (
@@ -123,3 +111,5 @@ export default function WeatherExercise() {
     </motion.div>
   );
 }
+
+export default WeatherExercise;
