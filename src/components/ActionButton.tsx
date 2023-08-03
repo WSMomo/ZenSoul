@@ -1,4 +1,4 @@
-type Props = {
+export type Props = {
   children: React.ReactNode;
   handleClick: () => void;
   color: string;
@@ -7,7 +7,7 @@ type Props = {
 export function ActionButton({ children, handleClick, color }: Props) {
   return (
     <button
-      className={`${color} m-2 md:m-10 w-32 md:w-40 h-20 rounded-md`}
+      className={`${color} w-32 m-2 md:m-10 rounded-3xl h-12 transition-all duration-200 hover:bg-cyan-950 hover:text-blue-200`}
       onClick={handleClick}
     >
       {children}

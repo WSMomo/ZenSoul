@@ -19,7 +19,7 @@ function App() {
     )
   );
   return (
-    <div className="bg-gradient-to-b from-cyan-500 to-blue-500">
+    <div className="bg-gradient-to-b from-cyan-500 to-blue-500 font-sans">
       <RouterProvider router={router} />
     </div>
   );

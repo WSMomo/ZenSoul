@@ -4,6 +4,7 @@ import { ActionButton } from "../components/ActionButton";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Loader from "./Loader";
+import TimeButton from "./TimeButton";
 
 export default function Workout() {
   const navigate = useNavigate();
@@ -117,15 +118,8 @@ export default function Workout() {
             {isRunning && timer === 0 && "Restart"}
           </ActionButton>
           <div>
-            <ActionButton handleClick={handleDecreaseTimer} color="bg-red-300">
-              -5
-            </ActionButton>
-            <ActionButton
-              handleClick={handleIncreaseTimer}
-              color="bg-green-300"
-            >
-              +5
-            </ActionButton>
+            <TimeButton handleClick={handleDecreaseTimer}>-5</TimeButton>
+            <TimeButton handleClick={handleIncreaseTimer}>+5</TimeButton>
           </div>
           <ActionButton handleClick={handleReset} color="bg-slate-300">
             Return at Home
