@@ -108,22 +108,24 @@ export default function Workout() {
     <>
       {imageIsLoaded ? (
         <div
-          className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd}`}
+          className={`h-screen flex flex-col items-center justify-around py-10 bg-no-repeat bg-cover bg-center ${bgImageSm} ${bgImageMd}`}
         >
           <Clock minutes={minutes} seconds={seconds} />
-          {/* PLAY */}
-          <ActionButton handleClick={handlePlay} color="bg-blue-300">
-            {isRunning && timer > 0 && "Stop"}
-            {!isRunning && timer > 0 && "Start"}
-            {isRunning && timer === 0 && "Restart"}
-          </ActionButton>
-          <div>
-            <TimeButton handleClick={handleDecreaseTimer}>-5</TimeButton>
-            <TimeButton handleClick={handleIncreaseTimer}>+5</TimeButton>
+          <div className="flex flex-col justify-center items-center">
+            {/* PLAY */}
+            <ActionButton handleClick={handlePlay} color="bg-blue-300">
+              {isRunning && timer > 0 && "Stop"}
+              {!isRunning && timer > 0 && "Start"}
+              {isRunning && timer === 0 && "Restart"}
+            </ActionButton>
+            <div>
+              <TimeButton handleClick={handleDecreaseTimer}>-5</TimeButton>
+              <TimeButton handleClick={handleIncreaseTimer}>+5</TimeButton>
+            </div>
+            <ActionButton handleClick={handleReset} color="bg-slate-300">
+              Return at Home
+            </ActionButton>
           </div>
-          <ActionButton handleClick={handleReset} color="bg-slate-300">
-            Return at Home
-          </ActionButton>
         </div>
       ) : (
         <Loader />

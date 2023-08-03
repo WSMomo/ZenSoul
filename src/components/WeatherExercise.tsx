@@ -90,7 +90,6 @@ export default function WeatherExercise() {
 
   return (
     <motion.div
-      onClick={handleNavigate}
       className="flex flex-col justify-center items-center py-10"
       initial="hidden"
       whileInView="visible"
@@ -105,7 +104,8 @@ export default function WeatherExercise() {
       }}
     >
       <div
-        className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none rounded-lg hover:bg-opacity-60 cursor-pointer`}
+        onClick={handleNavigate}
+        className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none md:rounded-full hover:bg-opacity-60 cursor-pointer`}
       >
         <div className="flex flex-col justify-center items-center ">
           <p className="text-2xl w-4/5 md:w-3/6 text-center">
