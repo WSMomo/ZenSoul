@@ -3,6 +3,7 @@ import { Clock } from "../components/Clock";
 import { ActionButton } from "../components/ActionButton";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import Loader from "./Loader";
 
 export default function Workout() {
   const navigate = useNavigate();
@@ -130,9 +131,7 @@ export default function Workout() {
           </ActionButton>
         </div>
       ) : (
-        <div className="h-screen w-screen flex justify-center items-center">
-          Loading
-        </div>
+        <Loader />
       )}
     </>
   );
