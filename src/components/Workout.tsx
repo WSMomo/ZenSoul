@@ -20,24 +20,24 @@ export default function Workout() {
   const minutes = Math.floor(timer / 60);
   const seconds = timer - minutes * 60;
 
-  const [imageIsLoaded] = useState(true);
+  const [imageIsLoaded, setImageIsLoaded] = useState(false);
   useEffect(() => {
     const backgroundImageSm = new Image();
     const backgroundImageMd = new Image();
     backgroundImageSm.src = pathBgImageSm;
     backgroundImageMd.src = pathBgImageMd;
 
-    // const backgroundImage = backgroundImageSm || backgroundImageMd;
+    const backgroundImage = backgroundImageSm || backgroundImageMd;
 
-    // backgroundImage.onload = () => {
-    //   console.log("Immagine di sfondo caricata.");
-    //   setImageIsLoaded(true);
-    // };
+    backgroundImage.onload = () => {
+      console.log("Immagine di sfondo caricata.");
+      setImageIsLoaded(true);
+    };
 
-    // backgroundImage.onerror = () => {
-    //   console.error("Errore durante il caricamento dell'immagine di sfondo.");
-    //   setImageIsLoaded(false);
-    // };
+    backgroundImage.onerror = () => {
+      console.error("Errore durante il caricamento dell'immagine di sfondo.");
+      setImageIsLoaded(false);
+    };
   }, [pathBgImageMd, pathBgImageSm]);
 
   function handlePlay() {
