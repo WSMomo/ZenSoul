@@ -15,7 +15,25 @@ export default function Workout() {
   const location = useLocation();
 
   const { type } = location.state;
-  const { bgImageMd, bgImageSm, song } = type;
+  const { bgImageMd, bgImageSm, song, pathBgImageSm } = type;
+
+  const [imageIsLoaded, setImageIsLoaded] = useState(false);
+  useEffect(() => {
+    const backgroundImage = new Image();
+    backgroundImage.src = pathBgImageSm;
+    console.log(backgroundImage.src);
+
+    backgroundImage.onload = () => {
+      console.log("Immagine di sfondo caricata.");
+      setImageIsLoaded(true);
+    };
+
+    backgroundImage.onerror = () => {
+      console.error("Errore durante il caricamento dell'immagine di sfondo.");
+      setImageIsLoaded(false);
+    };
+  }, [bgImageSm]);
+
   function handlePlay() {
     if (!isRunning && timer > 0) {
       // start the timer
@@ -81,27 +99,36 @@ export default function Workout() {
   }, [navigate]);
 
   return (
-    <div
-      className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd}`}
-    >
-      <Clock minutes={minutes} seconds={seconds} />
-      {/* PLAY */}
-      <ActionButton handleClick={handlePlay} color="bg-blue-300">
-        {isRunning && timer > 0 && "Stop"}
-        {!isRunning && timer > 0 && "Start"}
-        {isRunning && timer === 0 && "Restart"}
-      </ActionButton>
-      <div>
-        <ActionButton handleClick={handleDecreaseTimer} color="bg-red-300">
-          -5
-        </ActionButton>
-        <ActionButton handleClick={handleIncreaseTimer} color="bg-green-300">
-          +5
-        </ActionButton>
-      </div>
-      <ActionButton handleClick={handleReset} color="bg-slate-300">
-        Return at Home
-      </ActionButton>
-    </div>
+    <>
+      {imageIsLoaded ? (
+        <div
+          className={`h-screen flex flex-col items-center py-10 bg-no-repeat bg-cover ${bgImageSm} ${bgImageMd}`}
+        >
+          <Clock minutes={minutes} seconds={seconds} />
+          {/* PLAY */}
+          <ActionButton handleClick={handlePlay} color="bg-blue-300">
+            {isRunning && timer > 0 && "Stop"}
+            {!isRunning && timer > 0 && "Start"}
+            {isRunning && timer === 0 && "Restart"}
+          </ActionButton>
+          <div>
+            <ActionButton handleClick={handleDecreaseTimer} color="bg-red-300">
+              -5
+            </ActionButton>
+            <ActionButton
+              handleClick={handleIncreaseTimer}
+              color="bg-green-300"
+            >
+              +5
+            </ActionButton>
+          </div>
+          <ActionButton handleClick={handleReset} color="bg-slate-300">
+            Return at Home
+          </ActionButton>
+        </div>
+      ) : (
+        <div>dwadw</div>
+      )}
+    </>
   );
 }

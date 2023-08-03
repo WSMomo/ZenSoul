@@ -144,6 +144,8 @@ export type Exercise = {
   song: string;
   bgImageSm: string;
   bgImageMd: string;
+  pathBgImageSm?: string;
+  pathBgImageMd?: string;
 };
 
 // EXERCISES SENTENCES AND ICONS
@@ -157,6 +159,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     song: GrassSong,
     bgImageSm: "bg-grass-background-sm",
     bgImageMd: "md:bg-grass-background-md",
+    pathBgImageSm: "./assets/background/grass-background-sm.jpg",
+    pathBgImageMd: "./assets/background/grass-background-md.jpg",
   },
   lake: {
     title: "lake",
