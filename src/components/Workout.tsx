@@ -13,7 +13,7 @@ export default function Workout() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const location = useLocation();
 
-  let { type } = location.state;
+  const { type } = location.state;
   const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd, time } =
     type;
   const [timer, setTimer] = useState(time);
@@ -95,21 +95,6 @@ export default function Workout() {
     audioRef.current?.pause();
     clearInterval(intervalRef.current);
   }
-
-  useEffect(() => {
-    window.addEventListener("popstate", () => {
-      navigate("../");
-      audioRef.current?.pause();
-      clearInterval(intervalRef.current);
-    });
-  }, [navigate]);
-
-  useEffect(() => {
-    const savedType = localStorage.getItem("workoutType");
-    if (savedType) {
-      type = JSON.parse(savedType);
-    }
-  }, []);
 
   useEffect(() => {
     localStorage.setItem("workoutType", JSON.stringify(type));
