@@ -7,17 +7,17 @@ import Loader from "./Loader";
 
 export default function Workout() {
   const navigate = useNavigate();
-  const [timer, setTimer] = useState(300);
-  const minutes = Math.floor(timer / 60);
-  const seconds = timer - minutes * 60;
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const location = useLocation();
 
-  console.log(location.state);
   const { type } = location.state;
-  const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd } = type;
+  const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd, time } =
+    type;
+  const [timer, setTimer] = useState(time);
+  const minutes = Math.floor(timer / 60);
+  const seconds = timer - minutes * 60;
 
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Workout() {
     if (!isRunning && timer > 0) {
       // start the timer
       intervalRef.current = setInterval(() => {
-        setTimer((timer) => timer - 1);
+        setTimer((timer: number) => timer - 1);
       }, 1000);
       // start the song
       const audio = new Audio(song);

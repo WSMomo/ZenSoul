@@ -19,6 +19,7 @@ export default function Exercises() {
           bgColor={exercisesIcons[type].bgColor}
           sentence={exercisesIcons[type].sentence}
           image={exercisesIcons[type].img}
+          time={exercisesIcons[type].time}
         />
       ))}
     </div>

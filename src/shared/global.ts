@@ -158,6 +158,7 @@ export type Exercise = {
   bgImageMd: string;
   pathBgImageSm: string;
   pathBgImageMd: string;
+  time: number;
 };
 
 // EXERCISES SENTENCES AND ICONS
@@ -173,6 +174,7 @@ export const exercisesIcons: Record<string, Exercise> = {
     bgImageMd: "md:bg-grass-background-md",
     pathBgImageSm: GrassBackgroundSm,
     pathBgImageMd: GrassBackgroundMd,
+    time: 300,
   },
   lake: {
     title: "lake",
@@ -184,6 +186,7 @@ export const exercisesIcons: Record<string, Exercise> = {
     bgImageMd: "md:bg-lake-background-md",
     pathBgImageSm: LakeBackgroundSm,
     pathBgImageMd: LakeBackgroundMd,
+    time: 360,
   },
   relax: {
     title: "relax",
@@ -195,6 +198,7 @@ export const exercisesIcons: Record<string, Exercise> = {
     bgImageMd: "md:bg-relax-background-md",
     pathBgImageSm: RelaxBackgroundSm,
     pathBgImageMd: RelaxBackgroundMd,
+    time: 600,
   },
   sea: {
     title: "sea",
@@ -206,6 +210,7 @@ export const exercisesIcons: Record<string, Exercise> = {
     bgImageMd: "md:bg-sea-background-md",
     pathBgImageSm: SeaBackgroundSm,
     pathBgImageMd: SeaBackgroundMd,
+    time: 240,
   },
   woods: {
     title: "woods",
@@ -218,5 +223,6 @@ export const exercisesIcons: Record<string, Exercise> = {
     bgImageMd: "md:bg-woods-background-md",
     pathBgImageSm: WoodsBackgroundSm,
     pathBgImageMd: WoodsBackgroundMd,
+    time: 900,
   },
 };
