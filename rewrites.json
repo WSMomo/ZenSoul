@@ -1,6 +1,0 @@
-[
-  {
-    "source": "/(.*)",
-    "destination": "/dist/index.html"
-  }
-]
