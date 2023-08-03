@@ -15,13 +15,16 @@ export default function Workout() {
   const location = useLocation();
 
   const { type } = location.state;
-  const { bgImageMd, bgImageSm, song, pathBgImageSm } = type;
+  const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd } = type;
 
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
   useEffect(() => {
-    const backgroundImage = new Image();
-    backgroundImage.src = pathBgImageSm;
-    console.log(backgroundImage.src);
+    const backgroundImageSm = new Image();
+    const backgroundImageMd = new Image();
+    backgroundImageSm.src = pathBgImageSm;
+    backgroundImageMd.src = pathBgImageMd;
+
+    const backgroundImage = backgroundImageSm || backgroundImageMd;
 
     backgroundImage.onload = () => {
       console.log("Immagine di sfondo caricata.");
@@ -32,7 +35,7 @@ export default function Workout() {
       console.error("Errore durante il caricamento dell'immagine di sfondo.");
       setImageIsLoaded(false);
     };
-  }, []);
+  }, [pathBgImageMd, pathBgImageSm]);
 
   function handlePlay() {
     if (!isRunning && timer > 0) {
@@ -127,7 +130,9 @@ export default function Workout() {
           </ActionButton>
         </div>
       ) : (
-        <div>Loading</div>
+        <div className="h-screen w-screen flex justify-center items-center">
+          Loading
+        </div>
       )}
     </>
   );

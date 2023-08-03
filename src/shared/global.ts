@@ -10,6 +10,14 @@ import AtmosphereIcon from "../assets/weather/atmosphere.png";
 // BACKGROUND IMAGES
 import GrassBackgroundSm from "../assets/background/grass-background-sm.jpg";
 import GrassBackgroundMd from "../assets/background/grass-background-md.jpg";
+import LakeBackgroundSm from "../assets/background/lake-background-sm.jpg";
+import LakeBackgroundMd from "../assets/background/lake-background-md.jpg";
+import RelaxBackgroundSm from "../assets/background/relax-background-sm.jpg";
+import RelaxBackgroundMd from "../assets/background/relax-background-md.jpg";
+import SeaBackgroundSm from "../assets/background/sea-background-sm.jpg";
+import SeaBackgroundMd from "../assets/background/sea-background-md.jpg";
+import WoodsBackgroundSm from "../assets/background/woods-background-sm.jpg";
+import WoodsBackgroundMd from "../assets/background/woods-background-md.jpg";
 
 // EXERCISES ICONS
 import Grass from "../assets/exercises/grass.jpg";
@@ -148,8 +156,8 @@ export type Exercise = {
   song: string;
   bgImageSm: string;
   bgImageMd: string;
-  pathBgImageSm?: string;
-  pathBgImageMd?: string;
+  pathBgImageSm: string;
+  pathBgImageMd: string;
 };
 
 // EXERCISES SENTENCES AND ICONS
@@ -174,6 +182,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     song: LakeSong,
     bgImageSm: "bg-lake-background-sm",
     bgImageMd: "md:bg-lake-background-md",
+    pathBgImageSm: LakeBackgroundSm,
+    pathBgImageMd: LakeBackgroundMd,
   },
   relax: {
     title: "relax",
@@ -183,6 +193,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     song: RelaxSong,
     bgImageSm: "bg-relax-background-sm",
     bgImageMd: "md:bg-relax-background-md",
+    pathBgImageSm: RelaxBackgroundSm,
+    pathBgImageMd: RelaxBackgroundMd,
   },
   sea: {
     title: "sea",
@@ -192,6 +204,8 @@ export const exercisesIcons: Record<string, Exercise> = {
     song: SeaSong,
     bgImageSm: "bg-sea-background-sm",
     bgImageMd: "md:bg-sea-background-md",
+    pathBgImageSm: SeaBackgroundSm,
+    pathBgImageMd: SeaBackgroundMd,
   },
   woods: {
     title: "woods",
@@ -202,5 +216,7 @@ export const exercisesIcons: Record<string, Exercise> = {
     song: WoodsSong,
     bgImageSm: "bg-woods-background-sm",
     bgImageMd: "md:bg-woods-background-md",
+    pathBgImageSm: WoodsBackgroundSm,
+    pathBgImageMd: WoodsBackgroundMd,
   },
 };
