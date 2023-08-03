@@ -1,6 +1,6 @@
-import ErrorPage from "./scenes/ErrorPage";
-import Home from "./scenes/Home";
-import Workout from "./scenes/Workout";
+import ErrorPage from "./components/ErrorPage";
+import Home from "./components/Home";
+import Workout from "./components/Workout";
 import {
   createBrowserRouter,
   createRoutesFromElements,

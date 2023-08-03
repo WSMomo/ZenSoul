@@ -21,7 +21,6 @@ export function Clock({ seconds, minutes }: Props) {
         {/* SECONDS */}
         <div className="w-1/2  h-full rounded-r-full flex justify-center items-center">
           <p className=" font-semibold text-6xl">
-            {" "}
             {seconds < 10 && "0"}
             {seconds}
           </p>
