@@ -17,40 +17,43 @@ export default function WeatherExercise() {
   const [lon, setLon] = useState(0);
   const [weather, setWeather] = useState<WeatherType>("clear");
   const [type, setType] = useState<Exercise>(exercisesIcons.clear);
-
   const navigate = useNavigate();
-  function handleExercise() {
-    switch (weather) {
-      case "clouds":
-      case "haze":
-      case "squall":
-        setType(exercisesIcons.grass);
-        break;
-      case "clear":
-      case "drizzle":
-        setType(exercisesIcons.lake);
-        break;
-      case "mist":
-      case "rain":
-      case "thunderstorm":
-        setType(exercisesIcons.sea);
-        break;
-      case "snow":
-      case "tornado":
-      case "volcanicAsh":
-        setType(exercisesIcons.woods);
-        break;
-      case "smoke":
-      case "sand":
-      case "dust":
-      case "fog":
-        setType(exercisesIcons.relax);
-        break;
-      default:
-        return;
+
+  useEffect(() => {
+    function handleExercise() {
+      switch (weather) {
+        case "clouds":
+        case "haze":
+        case "squall":
+          setType(exercisesIcons.grass);
+          break;
+        case "clear":
+        case "drizzle":
+          setType(exercisesIcons.lake);
+          break;
+        case "mist":
+        case "rain":
+        case "thunderstorm":
+          setType(exercisesIcons.sea);
+          break;
+        case "snow":
+        case "tornado":
+        case "volcanicAsh":
+          setType(exercisesIcons.woods);
+          break;
+        case "smoke":
+        case "sand":
+        case "dust":
+        case "fog":
+          setType(exercisesIcons.relax);
+          break;
+        default:
+          setType(exercisesIcons.relax);
+          return;
+      }
     }
-    navigate("./workout", { state: { type } });
-  }
+    handleExercise();
+  }, [weather]);
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -80,9 +83,14 @@ export default function WeatherExercise() {
     fetchWeather();
   }, [lat, lon]);
 
+  function handleNavigate() {
+    console.log(type);
+    navigate("./workout", { state: { type } });
+  }
+
   return (
     <motion.div
-      onClick={handleExercise}
+      onClick={handleNavigate}
       className="flex flex-col justify-center items-center py-10"
       initial="hidden"
       whileInView="visible"
@@ -97,9 +105,6 @@ export default function WeatherExercise() {
       }}
     >
       <div
-        // onClick={() => {
-        //   navigate("./workout", { state: { type } });
-        // }}
         className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none rounded-lg hover:bg-opacity-60 cursor-pointer`}
       >
         <div className="flex flex-col justify-center items-center ">

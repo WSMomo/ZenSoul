@@ -15,6 +15,7 @@ export default function Workout() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const location = useLocation();
 
+  console.log(location.state);
   const { type } = location.state;
   const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd } = type;
 
