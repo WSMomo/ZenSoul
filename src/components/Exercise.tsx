@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 type Props = {
   bgColor: string;
@@ -14,17 +13,9 @@ export function Exercise({ side, bgColor, sentence, image, type }: Props) {
     <>
       {/* IF EVEN = LEFT, ELSE = RIGHT */}
       {side % 2 === 0 ? (
-        <motion.div
+        <div
           onClick={() => navigate("./workout", { state: { type } })}
           className={`w-5/6 md:w-3/5 h-40 md:h-48 rounded-r-full self-start ${bgColor} flex items-center min-w-min p-2 cursor-pointer bg-opacity-60 hover:bg-opacity-90 shadow-md`}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: -150 },
-            visible: { opacity: 1, x: 0 },
-          }}
         >
           <div className="w-3/6 md:w-4/5 px-1 font-semibold h-full flex items-center justify-center">
             {sentence}
@@ -39,9 +30,9 @@ export function Exercise({ side, bgColor, sentence, image, type }: Props) {
             </div>
             <div className="px-2 text-2xl font-semibold">5'</div>
           </div>
-        </motion.div>
+        </div>
       ) : (
-        <motion.div
+        <div
           onClick={() =>
             navigate("./workout", {
               state: {
@@ -50,14 +41,6 @@ export function Exercise({ side, bgColor, sentence, image, type }: Props) {
             })
           }
           className={`w-5/6 md:w-3/5 h-40 md:h-48 rounded-l-full self-end ${bgColor} flex items-center min-w-min p-2 bg-opacity-60 hover:bg-opacity-90 cursor-pointer shadow-md`}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.5 }}
-          transition={{ duration: 0.5 }}
-          variants={{
-            hidden: { opacity: 0, x: 150 },
-            visible: { opacity: 1, x: 0 },
-          }}
         >
           <div className="flex justify-between items-center">
             <div className="px-2 text-2xl font-semibold">5'</div>
@@ -72,7 +55,7 @@ export function Exercise({ side, bgColor, sentence, image, type }: Props) {
           <div className="w-3/6 h-full md:w-4/5 px-2 font-semibold flex items-center justify-center">
             {sentence}
           </div>
-        </motion.div>
+        </div>
       )}
     </>
   );

@@ -1,54 +1,56 @@
 // import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import {
+  Exercise,
   OPEN_WEATHER_KEY,
   WeatherType,
+  exercisesIcons,
   // exercisesIcons,
   weatherIcons,
 } from "../shared/global";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 export default function WeatherExercise() {
   // const navigate = useNavigate();
   const [lat, setLat] = useState(0);
   const [lon, setLon] = useState(0);
   const [weather, setWeather] = useState<WeatherType>("clear");
-  // const [type, setType] = useState<Exercise>(exercisesIcons.clear);
-  // function handleExercise() {
-  //   switch (weather) {
-  //     case "clouds":
-  //     case "haze":
-  //     case "squall":
-  //       setType(exercisesIcons.grass);
-  //       break;
-  //     case "clear":
-  //     case "drizzle":
-  //       setType(exercisesIcons.lake);
-  //       break;
-  //     case "mist":
-  //     case "rain":
-  //     case "thunderstorm":
-  //       setType(exercisesIcons.sea);
-  //       break;
-  //     case "snow":
-  //     case "tornado":
-  //     case "volcanicAsh":
-  //       setType(exercisesIcons.woods);
-  //       break;
-  //     case "smoke":
-  //     case "sand":
-  //     case "dust":
-  //     case "fog":
-  //       setType(exercisesIcons.relax);
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // }
+  const [type, setType] = useState<Exercise>(exercisesIcons.clear);
 
-  // useEffect(() => {
-
-  // }, [navigate, type]);
+  const navigate = useNavigate();
+  function handleExercise() {
+    switch (weather) {
+      case "clouds":
+      case "haze":
+      case "squall":
+        setType(exercisesIcons.grass);
+        break;
+      case "clear":
+      case "drizzle":
+        setType(exercisesIcons.lake);
+        break;
+      case "mist":
+      case "rain":
+      case "thunderstorm":
+        setType(exercisesIcons.sea);
+        break;
+      case "snow":
+      case "tornado":
+      case "volcanicAsh":
+        setType(exercisesIcons.woods);
+        break;
+      case "smoke":
+      case "sand":
+      case "dust":
+      case "fog":
+        setType(exercisesIcons.relax);
+        break;
+      default:
+        return;
+    }
+    navigate("./workout", { state: { type } });
+  }
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -80,6 +82,7 @@ export default function WeatherExercise() {
 
   return (
     <motion.div
+      onClick={handleExercise}
       className="flex flex-col justify-center items-center py-10"
       initial="hidden"
       whileInView="visible"
