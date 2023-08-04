@@ -96,6 +96,14 @@ export default function Workout() {
     clearInterval(intervalRef.current);
   }
 
+  useEffect(() => {
+    window.addEventListener("popstate", () => {
+      navigate("../");
+      audioRef.current?.pause();
+      clearInterval(intervalRef.current);
+    });
+  }, [navigate]);
+
   return (
     <>
       {imageIsLoaded ? (
