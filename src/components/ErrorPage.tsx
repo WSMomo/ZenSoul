@@ -5,7 +5,15 @@ export default function ErrorPage() {
         Hello there! It seems even our zen thoughts decided to take a short
         break. But fret not, we're working behind the scenes to restore serenity
         to your meditation experience. Take a deep breath and come back soon to
-        rediscover your virtual bliss. Namast-ha patience!
+        rediscover your virtual bliss. In the meantime, would you like to try
+        our{" "}
+        <a
+          href={"https://zen-soul.vercel.app/"}
+          className="underline text-blue-400"
+        >
+          homepage
+        </a>{" "}
+        to find your way back to tranquility? Namast-ha patience!
       </div>
       <div>🧘‍♀️🧘🏻‍♀️🧘🏼‍♀️🧘🏽‍♀️🧘🏾‍♀️🧘🏿‍♀️🧘🏿‍♂️🧘🏾‍♂️🧘🏽‍♂️🧘🏼‍♂️🧘🏻‍♂️🧘‍♂️</div>
     </div>
