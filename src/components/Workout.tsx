@@ -18,8 +18,11 @@ export default function Workout() {
   const location = useLocation();
 
   const defaultType = exercisesIcons.grass;
+  console.log(defaultType);
 
   const { type } = location.state || defaultType;
+
+  console.log(type);
   const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd, time } =
     type;
   const [timer, setTimer] = useState(time);
