@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Loader from "./Loader";
 import TimeButton from "./TimeButton";
+import { exercisesIcons } from "../shared/global";
 
 export default function Workout() {
   useEffect(() => {
@@ -16,7 +17,9 @@ export default function Workout() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const location = useLocation();
 
-  const { type } = location.state;
+  const defaultType = exercisesIcons.grass;
+
+  const { type } = location.state || defaultType;
   const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd, time } =
     type;
   const [timer, setTimer] = useState(time);
