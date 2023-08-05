@@ -20,7 +20,7 @@ export default function Workout() {
   const defaultType = exercisesIcons.grass;
   console.log(defaultType);
 
-  const { type = defaultType } = location.state || defaultType;
+  const { type = defaultType } = location.state;
 
   console.log(type);
   const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd, time } =
