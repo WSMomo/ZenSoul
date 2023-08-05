@@ -7,6 +7,9 @@ import Loader from "./Loader";
 import TimeButton from "./TimeButton";
 
 export default function Workout() {
+  useEffect(() => {
+    console.log("Workout Page");
+  }, []);
   const navigate = useNavigate();
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(0);
