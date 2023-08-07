@@ -38,7 +38,7 @@ export const OPEN_WEATHER_KEY = import.meta.env.VITE_OPEN_WEATHER_KEY;
 
 // WEATHER SENTENCES AND ICONS
 
-export const weatherIcons = {
+export const weatherInfo = {
   clouds: {
     img: CloudsIcon,
     sentence:
@@ -148,7 +148,7 @@ export type WeatherType =
   | "tornado"
   | "volcanicAsh";
 
-export type Exercise = {
+export type ExerciseType = {
   title: string;
   img: string;
   sentence: string;
@@ -162,7 +162,7 @@ export type Exercise = {
 };
 
 // EXERCISES SENTENCES AND ICONS
-export const exercisesIcons: Record<string, Exercise> = {
+export const exerciseInfo: Record<string, ExerciseType> = {
   grass: {
     title: "grass",
     img: Grass,

@@ -18,7 +18,7 @@ export default function Hero() {
       >
         <img src={Logo} alt="logo" />
       </motion.div>
-      {/* MESSAGGIO DI BENVENUTO */}
+      {/* WELCOME MESSAGE */}
       <div>
         <h1 className="text-4xl text-white">Welcome!</h1>
       </div>

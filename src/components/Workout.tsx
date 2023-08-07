@@ -5,31 +5,29 @@ import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import Loader from "./Loader";
 import TimeButton from "./TimeButton";
-import { exercisesIcons } from "../shared/global";
+import { exerciseInfo } from "../shared/global";
 
 export default function Workout() {
-  useEffect(() => {
-    console.log("Workout Page");
-  }, []);
   const navigate = useNavigate();
   const [isRunning, setIsRunning] = useState(false);
   const intervalRef = useRef(0);
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const location = useLocation();
 
-  const defaultType = exercisesIcons.grass;
-  console.log(defaultType);
-
+  // IF TYPE NOT LOADED
+  const defaultType = exerciseInfo.grass;
   const { type = defaultType } = location.state || defaultType;
 
-  console.log(type);
   const { bgImageMd, bgImageSm, song, pathBgImageSm, pathBgImageMd, time } =
     type;
+  // TIMER
   const [timer, setTimer] = useState(time);
   const minutes = Math.floor(timer / 60);
   const seconds = timer - minutes * 60;
 
   const [imageIsLoaded, setImageIsLoaded] = useState(false);
+
+  // IMAGE LOADER
   useEffect(() => {
     const backgroundImageSm = new Image();
     const backgroundImageMd = new Image();
@@ -39,16 +37,15 @@ export default function Workout() {
     const backgroundImage = backgroundImageSm || backgroundImageMd;
 
     backgroundImage.onload = () => {
-      console.log("Immagine di sfondo caricata.");
       setImageIsLoaded(true);
     };
 
     backgroundImage.onerror = () => {
-      console.error("Errore durante il caricamento dell'immagine di sfondo.");
       setImageIsLoaded(false);
     };
   }, [pathBgImageMd, pathBgImageSm]);
 
+  // AUDIO CONTROL
   function handlePlay() {
     if (!isRunning && timer > 0) {
       // start the timer
@@ -80,6 +77,7 @@ export default function Workout() {
     setIsRunning(!isRunning);
   }
 
+  // DECREASE TIMER
   function handleDecreaseTimer() {
     if (timer > 300) {
       setTimer(timer - 300);
@@ -88,10 +86,12 @@ export default function Workout() {
     }
   }
 
+  // INCREASE TIMER
   function handleIncreaseTimer() {
     setTimer(timer + 300);
   }
 
+  // REMOVE AUDIO ON END
   useEffect(() => {
     if (timer <= 0) {
       clearInterval(intervalRef.current);
@@ -99,12 +99,14 @@ export default function Workout() {
     }
   }, [timer]);
 
+  // RESET
   function handleReset() {
     navigate("../");
     audioRef.current?.pause();
     clearInterval(intervalRef.current);
   }
 
+  // ON BROWSER "BACK"
   useEffect(() => {
     window.addEventListener("popstate", () => {
       navigate("../");

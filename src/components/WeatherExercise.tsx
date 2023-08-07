@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 import {
   OPEN_WEATHER_KEY,
   WeatherType,
-  exercisesIcons,
-  weatherIcons,
+  exerciseInfo,
+  weatherInfo,
 } from "../shared/global";
 
-type ExerciseType = keyof typeof exercisesIcons;
+type ExerciseType = keyof typeof exerciseInfo;
 
 function mapWeatherToExercise(weather: WeatherType): ExerciseType {
   const mapping: Record<WeatherType, ExerciseType> = {
@@ -38,6 +38,7 @@ function WeatherExercise() {
   const [weather, setWeather] = useState<WeatherType>("clear");
   const navigate = useNavigate();
 
+  // GET USER LOCATION
   useEffect(() => {
     if ("geolocation" in navigator) {
       navigator.geolocation.getCurrentPosition(
@@ -56,6 +57,7 @@ function WeatherExercise() {
     }
   }, []);
 
+  // GET USER LOCATION WEATHER CONDITIONS
   useEffect(() => {
     async function fetchWeather() {
       const key = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${OPEN_WEATHER_KEY}`;
@@ -71,9 +73,10 @@ function WeatherExercise() {
     fetchWeather();
   }, [lat, lon]);
 
+  // SET THE NAVIGATION PAGE
   function handleNavigate() {
     const weatherType = mapWeatherToExercise(weather);
-    navigate("./workout", { state: { type: exercisesIcons[weatherType] } });
+    navigate("./workout", { state: { type: exerciseInfo[weatherType] } });
   }
 
   return (
@@ -93,17 +96,17 @@ function WeatherExercise() {
     >
       <div
         onClick={handleNavigate}
-        className={`flex flex-col justify-center items-center ${weatherIcons[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none md:rounded-full hover:bg-opacity-60 cursor-pointer`}
+        className={`flex flex-col justify-center items-center ${weatherInfo[weather]?.bgColor} bg-opacity-40 md:p-5 py-3 border-none md:rounded-full hover:bg-opacity-60 cursor-pointer`}
       >
         <div className="flex flex-col justify-center items-center ">
           <p className="text-2xl w-4/5 md:w-3/6 text-center">
-            "{weatherIcons[weather]?.sentence}"
+            "{weatherInfo[weather]?.sentence}"
           </p>
         </div>
         <div className="md:w-64 md:h-64">
           <img
             className="w-full h-full"
-            src={weatherIcons[weather]?.img}
+            src={weatherInfo[weather]?.img}
             alt={weather}
           />
         </div>
