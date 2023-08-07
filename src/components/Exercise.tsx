@@ -22,7 +22,7 @@ export function Exercise({ side, type }: Props) {
           <div className="w-3/6 md:w-4/5 px-1 font-semibold h-full flex items-center justify-center">
             {type.sentence}
           </div>
-          <div className="flex justify-between  items-center">
+          <div className="flex items-center justify-between">
             <PreviewImage image={type.img} />
             <div className="px-2 text-2xl font-semibold">{type.time / 60}'</div>
           </div>
@@ -32,7 +32,7 @@ export function Exercise({ side, type }: Props) {
           onClick={() => navigate("./workout", { state: { type } })}
           className={`w-5/6 md:w-3/5 h-40 md:h-48 ${roundedStyle} self-end ${type.bgColor} flex items-center min-w-min p-2 bg-opacity-60 hover:bg-opacity-90 cursor-pointer shadow-md`}
         >
-          <div className="flex justify-between items-center">
+          <div className="flex justify-center items-center">
             <div className="px-2 text-2xl font-semibold">{type.time / 60}'</div>
             <PreviewImage image={type.img} />
           </div>
